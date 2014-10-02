@@ -1,0 +1,105 @@
+/*FONTS*/
+@font-face {
+	font-family:ITCAvantGarde;
+	src: url(./fonts/ITCAvantGardeStd-Demi.otf);
+}
+
+* {
+  -moz-box-sizing: border-box;
+ 	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: Arial,Sans-serif;
+  }
+
+body {
+	background-color: #bebebe;
+	background: url(./img/school.png) repeat;
+}
+
+article {
+	width: 500px;
+	height: 50%;
+	background-color: #f4f4f4;
+	margin:0 auto;
+	text-align: center;
+	border-radius: 6px;
+	margin-top: 90px;
+
+}
+
+h1 {
+	padding: 20px 0px;
+	background-color: #625192;
+	color:#ffffff;
+	border-radius: 6px 6px 0px 0px;
+	font-family:ITCAvantGarde;
+}
+
+#tasks {
+	margin-left: 30px;
+	margin-top: 30px;
+
+}
+
+input {
+	width: 400px;
+	height: 50px;
+	background-color: #ffffff;
+	border-radius: 6px;
+	border: 1px solid #bebebe;
+	padding: 20px;
+}
+
+input:focus {
+	border:1px solid #625192;
+	box-shadow: none;
+	outline: none;
+ }
+
+button {
+	background-color: #bebebe;
+	border:none;
+	color:#717071;
+	padding: 15px 20px;
+	border-radius: 6px;
+	margin-bottom: 30px;
+	margin-top: 40px;
+	outline: none;
+}
+
+button:hover {
+	outline: none;
+	color:#ffffff;
+	background-color:#625192; 
+}
+
+button:active {
+	outline: none;
+}
+
+#clearButton {
+	margin-right: 20px;
+}
+
+li {
+	list-style-type: 12px;
+	text-align: left;
+	line-height: 30px;
+	color:#717071;
+	cursor: pointer;
+	list-style-type: circle;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+footer {
+	width: 500px;
+	height: 50%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20px;
+	color:#717071;
+	font-size: 14px;
+}
