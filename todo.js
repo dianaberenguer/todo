@@ -6,7 +6,7 @@ var newTaskInput = document.getElementById('newTask');
 var tasks = document.getElementById('tasks');
 var clearDone = document.getElementById('clearButton')
 var clearAll = document.getElementById('allButton')
-// var tasks = document.createElement(tasks);
+
 
 
 
@@ -26,10 +26,6 @@ newTaskInput.onkeypress = function(evt) {
 };
 
 
-/**********************
-FUNCTION VIEW TASK LIST
-***********************/
-
 function newTask(task) {
 	var taskItem = document.createElement('li');
 	taskItem.textContent = task;
@@ -42,9 +38,11 @@ function newTask(task) {
 FUNCTION ON CLICK - DONE
 ************************/
 
-tasks.onclick = function markAsDone(evt) {
+tasks.onclick = function(evt) {
   var task = evt.target;
-  toggleDone(task);
+  if (task.tagName === "LI"){
+		toggleDone(task);
+  }
  };
 
 function toggleDone(taskElement) {
@@ -55,24 +53,30 @@ function toggleDone(taskElement) {
 /***********************
 FUNCTION CLEAR DONE TASKS
 ************************/
-function clearDone(done) {
-		var doneItem = document.getElementsByTagName('done');
-		if (doneItem){
-		done.target.files;
-		}
+
+function clearDoneTasks() {
+	var doneTasks = document.getElementsByClassName('done');
+	for(var i=doneTasks.length-1; i >= 0; i--) {
+		doneTasks[i].parentNode.removeChild(doneTasks[i]);
+	}
 }
 
-// clearButton.onclick = function clearDone(evt) {
-// 	var
-// }
+clearButton.onclick = function() {
+	clearDoneTasks();
+}
 
 
 /***********************
 FUNCTION CLEAR ALL TASKS
 ************************/
 
-allButton.onclick = function clearAll(evt) {
-	var allTasks = evt.target;
-	clearAll(allTasks);
-}	
+function clearAllTasks() {
+	var allTasks = document.getElementsByTagName('li');
+	for(var i=allTasks.length-1; i >= 0; i--) {
+		allTasks[i].parentNode.removeChild(allTasks[i]);
+	}
+}
 
+allButton.onclick = function() {
+	clearAllTasks();
+}
